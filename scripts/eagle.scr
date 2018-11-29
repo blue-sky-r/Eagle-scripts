@@ -1,0 +1,107 @@
+# Configuration Script
+#
+# This file can be used to configure the editor windows.
+#
+# Uncomment this if you want a set of useful default shortcuts!
+#SCRIPT default-assign.scr;
+#
+
+Assign F4 'Info';
+#Assign AF7 'Group';
+Assign F8 'Delete';
+Assign C+C 'Copy';
+Assign C+M 'Move';
+Assign BS 'Undo';
+Assign S+BS 'Redo';
+
+#############
+### BOARD ###
+#############
+
+BRD:
+#Grid Default On;
+# 50 mil = Coarse
+#Grid inch 0.050 1 On;
+# 25 mil = Normal
+Grid inch 0.025 1 On;
+# 12.5 mil = Fine
+#Grid inch 0.0125 1 On;
+# 6.25 mil = Finest
+#Grid inch 0.00625 1 On;
+
+MENU '[designlink22.png] Search and order : Run designlink-order.ulp -general;'\
+     '[ico/3d.png] 3D : Run ~/eagle/eagle3d/ulp/3d50.ulp;'\
+     '[pcb-service.png] PCB Service : Run pcb-service.ulp;'\
+     '[ico/seeed.png] PCB Seeed : Run pcb-service.ulp;'\
+     '---'\
+     'Grid {\
+             Metric   {\
+                        Coarse 1cm: Grid mm 10 1 On; |\
+                        Normal 1mm: Grid mm 1 1 On; |\
+                        Fine   0mm1: Grid mm 0.1 10 On;\
+                      } | \
+             Imperial {\
+                        Coarse 50mil: Grid inch 0.050 1 On; |\
+                        Normal 25mil: Grid inch 0.025 1 On; |\
+                        Fine   12.5mil: Grid inch 0.0125 2 On; |\
+                        Finest 0.625mil: Grid inch 0.00625 4 On;\
+                      } | \
+             On  : Grid On; | \
+             Off : Grid Off;\
+           }'\
+     'Display {\
+                Top       : Display None Top    Pads Vias Dimension; |\
+                Bottom    : Display None Bottom Pads Vias Dimension; |\
+                Placeplan {\
+                            Top    : Display None tPlace Dimension; |\
+                            Bottom : Display None bPlace Dimension;\
+                          }\
+              }'\
+     '---'\
+     'Fit : Window Fit;'\
+;
+
+#################
+### SCHEMATIC ###
+#################
+
+SCH:
+Grid Default On;
+Change Width 0.006in;
+MENU '[designlink22.png] Search and order {\
+                                          General : Run designlink-order.ulp -general; |\
+                                          Schematic : Run designlink-order.ulp; \
+                                          }'\
+;
+
+###############
+### LIBRARY ###
+###############
+
+LBR:
+MENU '[designlink22.png] Search and order : Run designlink-order.ulp -general;'\
+;
+
+##############
+### DEVICE ###
+##############
+
+DEV:
+Grid Default;
+
+##############
+### SYMBOL ###
+##############
+
+SYM:
+Grid Default On;
+Change Width 0.010in;
+
+###############
+### PACKAGE ###
+###############
+
+PAC:
+Grid Default On;
+Change Width 0.005in;
+Change Size 0.050in;
