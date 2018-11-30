@@ -11,8 +11,8 @@ Assign F4 'Info';
 Assign F8 'Delete';
 Assign C+C 'Copy';
 Assign C+M 'Move';
-Assign BS 'Undo';
-Assign S+BS 'Redo';
+#Assign BS 'Undo';
+#Assign S+BS 'Redo';
 
 #############
 ### BOARD ###
@@ -32,7 +32,8 @@ Grid inch 0.025 1 On;
 MENU '[designlink22.png] Search and order : Run designlink-order.ulp -general;'\
      '[ico/3d.png] 3D : Run ~/eagle/eagle3d/ulp/3d50.ulp;'\
      '[pcb-service.png] PCB Service : Run pcb-service.ulp;'\
-     '[ico/seeed.png] PCB Seeed : Run pcb-service.ulp;'\
+     '[ico/jlcpcb.png] PCB JLC : Run pcb-service.ulp;'\
+     '[ico/pcbway.png] PCB Way : Run pcb-service.ulp;'\
      '---'\
      'Grid {\
              Metric   {\
